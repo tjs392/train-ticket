@@ -58,7 +58,8 @@ ssh -L 9000:localhost:8080 <user>@<vm>
 Access train ticket on http://localhost:9000
 
 ## Troubleshooting
-`docker images` should return all images of the train ticket service. 
-`curl -v http://127.0.0.1:5000/v2/_catalog` should return a JSON list of images in the repository. If this does not return anything, pushing to the registry has failed.
-`minikube ssh` lets you ssh into the minikube virtual box. Try and hit http://host.minikube.internal:5000 from inside
+- `docker images` should return all images of the train ticket service. 
+- `curl -v http://127.0.0.1:5000/v2/_catalog` should return a JSON list of images in the repository. If this does not return anything, pushing to the registry has failed.
+- `minikube ssh` lets you ssh into the minikube virtual box. Try and hit http://host.minikube.internal:5000 from inside
+- Error 502 Bad Gateway means one of the pods is broken and/or not up. Make sure the mysql pod is up. 
 
