@@ -1,6 +1,6 @@
 global:
   image:
-    repository: 10.10.10.240/library
+    repository: 127.0.0.1
     tag: latest
   port: 8080
   mysql:
@@ -169,11 +169,11 @@ services:
 
 resources:
   requests:
-    cpu: 2
-    memory: 2Gi
+    cpu: "0.10"
+    memory: 250Mi
   limits:
-    cpu: 4
-    memory: 4Gi
+    cpu: "0.17"
+    memory: 500Mi
 
 skywalking-helm:
   oap:
@@ -187,11 +187,11 @@ skywalking-helm:
     javaOpts: -Xmx2g -Xms2g
     resources:
       limits:
-        cpu: 4
-        memory: 8Gi
+        cpu: "0.17"
+        memory: 500Mi
       requests:
-        cpu: 4
-        memory: 4Gi
+        cpu: "0.10"
+        memory: 250Mi
     livenessProbe: 
       tcpSocket:
         port: 12800
