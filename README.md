@@ -35,12 +35,12 @@ Once changed, run
 minikube start --insecure-registry="host.minikube.internal:5000" --memory <memory in mb> --cpus <#cpus>
 ```
 
-7. Make Deployment
+6. Make Deployment
 ```bash
 helm install ts manifests/helm/generic_service -n ts --create-namespace --set global.monitoring=opentelemtry --set skywalking.enabled=false --set global.image.tag=latest --set global.image.repository=host.minikube.internal:5000
 ```
 
-8. Start Reverse Proxy
+7. Start Reverse Proxy
 ```bash
 #get minikube ip
 minikube ip
@@ -51,7 +51,7 @@ nohup caddy reverse-proxy --from :8080 --to <minikube_IP>:30080 &
 starts Caddy as a reverse proxy; Caddy will listen for incoming requests on port 8080 of the local machine
 and forward incoming requests to <minikube_IP>:30080; minikube instance is usually listening on port 30080
 
-9. Now you can access Train Ticket through a web browser
+8. Now you can access Train Ticket through a web browser
 ```bash
 ip route | default
 ```
