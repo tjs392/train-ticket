@@ -55,4 +55,4 @@ and forward incoming requests to <minikube_IP>:30080; minikube instance is usual
 ```bash
 ip route | default
 ```
-This should show you the ip, just go to http://<<iproute>>:8080
+This should show you the ip, just go to http://ip:8080
