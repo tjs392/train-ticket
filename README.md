@@ -53,6 +53,6 @@ and forward incoming requests to <minikube_IP>:30080; minikube instance is usual
 
 8. Now you can access Train Ticket through a web browser
 ```bash
-ip route | default
+ip route | grep default
 ```
 This should show you the ip, just go to http://ip:8080
