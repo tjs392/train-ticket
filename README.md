@@ -61,5 +61,5 @@ Access train ticket on http://localhost:9000
 - `docker images` should return all images of the train ticket service. 
 - `curl -v http://127.0.0.1:5000/v2/_catalog` should return a JSON list of images in the repository. If this does not return anything, pushing to the registry has failed.
 - `minikube ssh` lets you ssh into the minikube virtual box. Try and hit http://host.minikube.internal:5000 from inside
-- Error 502 Bad Gateway means one of the pods is broken and/or not up. Make sure the mysql pod is up. 
+- Error 502 Bad Gateway can be caused by a lot. Most like it means one of the pods is broken and/or not up OR your caddy reverse proxy isn't working correctly. You can check the nohup.out for caddy errors. Also, make sure the mysql pod is up. 
 
