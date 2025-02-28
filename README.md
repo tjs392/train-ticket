@@ -51,11 +51,11 @@ nohup caddy reverse-proxy --from :8080 --to <minikube_IP>:30080 &
 starts Caddy as a reverse proxy; Caddy will listen for incoming requests on port 8080 of the local machine
 and forward incoming requests to <minikube_IP>:30080; minikube instance is usually listening on port 30080
 
-8. Now you can access Train Ticket through a web browser
+8. Port Forward to Local if Running on VM
 ```bash
-ip route | grep default
+ssh -L 9000:localhost:8080 <user>@<vm>
 ```
-This should show you the ip, just go to http://ip:8080
+Access train ticket on http://localhost:9000
 
 ## Troubleshooting
 `docker images` should return all images of the train ticket service. 
