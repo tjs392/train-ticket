@@ -56,3 +56,9 @@ and forward incoming requests to <minikube_IP>:30080; minikube instance is usual
 ip route | grep default
 ```
 This should show you the ip, just go to http://ip:8080
+
+## Troubleshooting
+`docker images` should return all images of the train ticket service. 
+`curl -v http://127.0.0.1:5000/v2/_catalog` should return a JSON list of images in the repository. If this does not return anything, pushing to the registry has failed.
+`minikube ssh` lets you ssh into the minikube virtual box. Try and hit http://host.minikube.internal:5000 from inside
+
