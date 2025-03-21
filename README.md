@@ -42,7 +42,7 @@ kubectl label nodes minikube disk=ssd
 
 7. Make Deployment
 ```bash
-helm install ts manifests/helm/generic_service -n ts --create-namespace --set global.monitoring=opentelemtry --set skywalking.enabled=false --set global.image.tag=latest --set global.image.repository=host.minikube.internal:5000
+helm install ts manifests/helm/generic_service -n ts --create-namespace --set global.monitoring=opentelemetry --set skywalking.enabled=false --set global.image.tag=latest --set global.image.repository=host.minikube.internal:5000
 ```
 
 8. Start Reverse Proxy
