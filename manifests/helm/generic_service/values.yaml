@@ -18,7 +18,7 @@ skywalking:
 
 opentelemetry:
   enabled: true
-  image: 10.10.10.240/library/autoinstrumentation-java:latest
+  image: 127.0.0.1/library/autoinstrumentation-java:latest
 
 services:
   tsAdminBasicInfoService:
@@ -169,11 +169,11 @@ services:
 
 resources:
   requests:
-    cpu: "0.10"
-    memory: 250Mi
+    cpu: .5
+    memory: 2Gi
   limits:
-    cpu: "0.17"
-    memory: 500Mi
+    cpu: .5
+    memory: 4Gi
 
 skywalking-helm:
   oap:
@@ -187,11 +187,11 @@ skywalking-helm:
     javaOpts: -Xmx2g -Xms2g
     resources:
       limits:
-        cpu: "0.17"
-        memory: 500Mi
+        cpu: .5
+        memory: 8Gi
       requests:
-        cpu: "0.10"
-        memory: 250Mi
+        cpu: .5
+        memory: 4Gi
     livenessProbe: 
       tcpSocket:
         port: 12800
