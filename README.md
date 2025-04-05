@@ -35,12 +35,17 @@ Once changed, run
 minikube start --insecure-registry="host.minikube.internal:5000" --memory <memory in mb> --cpus <#cpus>
 ```
 
-6. Make Deployment
+6. Edit node Affinity
 ```bash
-helm install ts manifests/helm/generic_service -n ts --create-namespace --set global.monitoring=opentelemtry --set skywalking.enabled=false --set global.image.tag=latest --set global.image.repository=host.minikube.internal:5000
+kubectl label nodes minikube disk=ssd
 ```
 
-7. Start Reverse Proxy
+7. Make Deployment
+```bash
+helm install ts manifests/helm/generic_service -n ts --create-namespace --set global.monitoring=opentelemetry --set skywalking.enabled=false --set global.image.tag=latest --set global.image.repository=host.minikube.internal:5000
+```
+
+8. Start Reverse Proxy
 ```bash
 #get minikube ip
 minikube ip
@@ -51,8 +56,17 @@ nohup caddy reverse-proxy --from :8080 --to <minikube_IP>:30080 &
 starts Caddy as a reverse proxy; Caddy will listen for incoming requests on port 8080 of the local machine
 and forward incoming requests to <minikube_IP>:30080; minikube instance is usually listening on port 30080
 
-8. Now you can access Train Ticket through a web browser
+9. Now you can access Train Ticket through a web browser
 ```bash
 ip route | default
 ```
 This should show you the ip, just go to http://ip:8080
+
+## Tracing 
+```bash
+#Get image for autoinstrumentation
+docker pull otel/autoinstrumentation-java:latest
+docker tag otel/autoinstrumentation-java:latest 127.0.0.1:5000/library/autoinstrumentation-java:latest
+docker push 127.0.0.1:5000/library/autoinstrumentation-java:latest
+```
+
