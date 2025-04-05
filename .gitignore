@@ -1,2 +1,5 @@
 target
 *.tgz
+
+!caddy.log
+!caddy-zipkin.log

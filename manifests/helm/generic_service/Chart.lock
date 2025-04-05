@@ -2,11 +2,11 @@ dependencies:
 - name: mysql
   repository: file://../mysql
   version: 0.0.1
-- name: skywalking-helm
-  repository: oci://registry-1.docker.io/apache
-  version: 4.5.0
-- name: postgresql
-  repository: oci://registry-1.docker.io/bitnamicharts
-  version: 15.1.4
-digest: sha256:6fa6eda855e75ceb7d0b1afc849f217ccaefdc87ddcb818f135f406580fc4ddb
-generated: "2024-03-31T09:34:40.817112+08:00"
+- name: opentelemetry-collector
+  repository: https://open-telemetry.github.io/opentelemetry-helm-charts
+  version: 0.35.0
+- name: zipkin
+  repository: https://openzipkin.github.io/zipkin
+  version: 0.7.0
+digest: sha256:5a6173af88673313106a3f3e59a5ff632073ffb29b8ee3726f9cb86b0b9e7193
+generated: "2025-03-28T16:01:02.208515753Z"

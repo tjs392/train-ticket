@@ -1,0 +1,6 @@
+{"level":"warn","ts":1743866582.8276238,"logger":"admin","msg":"admin endpoint disabled"}
+{"level":"info","ts":1743866582.8280258,"logger":"tls.cache.maintenance","msg":"started background certificate maintenance","cache":"0xc000277180"}
+{"level":"info","ts":1743866582.828207,"logger":"tls","msg":"cleaning storage unit","description":"FileStorage:/home/tjs392/.local/share/caddy"}
+{"level":"info","ts":1743866582.8282957,"logger":"tls","msg":"finished cleaning storage units"}
+{"level":"info","ts":1743866582.8284924,"logger":"http.log","msg":"server running","name":"proxy","protocols":["h1","h2","h3"]}
+Caddy proxying http://:8080 -> 192.168.49.2:30080

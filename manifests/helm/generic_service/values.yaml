@@ -1,6 +1,6 @@
 global:
   image:
-    repository: 127.0.0.1
+    repository: host.minikube.internal:5000
     tag: latest
   port: 8080
   mysql:
@@ -9,8 +9,8 @@ global:
     database: "ts"
     user: "root"
     password: "yourpassword" 
-  monitoring: "opentelemetry" 
-  # otelcollector: "http://opentelemetry-collector-deployment.monitoring:4317"
+  monitoring: "opentelemetry"
+  otelcollector: "http://ts-opentelemetry-collector.ts:4317"
 
 skywalking:
   enabled: false  # 默认不部署SkyWalking
@@ -18,7 +18,7 @@ skywalking:
 
 opentelemetry:
   enabled: true
-  image: 127.0.0.1/library/autoinstrumentation-java:latest
+  image: otel/autoinstrumentation-java:latest
 
 services:
   tsAdminBasicInfoService:

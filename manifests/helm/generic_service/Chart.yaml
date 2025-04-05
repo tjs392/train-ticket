@@ -27,13 +27,13 @@ dependencies:
   - name: mysql
     version: "0.0.1"
     repository: "file://../mysql"
-  - name: skywalking-helm
-    version: 4.5.0
-    repository: "oci://registry-1.docker.io/apache"
-    condition: skywalking.enabled
-  - name: postgresql
-    version: 15.1.4
-    repository: "oci://registry-1.docker.io/bitnamicharts"
-    condition: skywalking.enabled
+  - name: opentelemetry-collector
+    version: "0.35.0"
+    repository: "https://open-telemetry.github.io/opentelemetry-helm-charts"
+    condition: opentelemetry.enabled
+  - name: zipkin
+    version: "0.7.0"
+    repository: "https://openzipkin.github.io/zipkin"
+    condition: zipkin.enabled
 
 
